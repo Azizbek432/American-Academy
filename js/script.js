@@ -1,7 +1,8 @@
 let currentLang = localStorage.getItem("app_lang") || "uz";
+let currentTheme = localStorage.getItem("app_theme") || "light";
 
 function getNestedTranslation(obj, path) {
-  return path.split('.').reduce((prev, curr) => prev ? prev[curr] : null, obj);
+  return path.split('.').reduce((prev, curr) => (prev ? prev[curr] : null), obj);
 }
 
 function applyTranslations(lang) {
@@ -15,6 +16,8 @@ function applyTranslations(lang) {
     if (translation) {
       if (el.tagName === "INPUT" || el.tagName === "TEXTAREA") {
         el.placeholder = translation;
+      } else if (el.tagName === "OPTION") {
+        el.textContent = translation;
       } else {
         el.textContent = translation;
       }
@@ -26,14 +29,39 @@ function applyTranslations(lang) {
   });
 }
 
+function applyTheme(theme) {
+  currentTheme = theme;
+  localStorage.setItem("app_theme", theme);
+
+  const themeBtn = document.getElementById("theme-toggle");
+  
+  if (theme === "dark") {
+    document.body.classList.add("dark-theme");
+    if (themeBtn) themeBtn.innerHTML = '<i class="fas fa-sun"></i>';
+  } else {
+    document.body.classList.remove("dark-theme");
+    if (themeBtn) themeBtn.innerHTML = '<i class="fas fa-moon"></i>';
+  }
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   applyTranslations(currentLang);
+  applyTheme(currentTheme);
 
   document.querySelectorAll(".lang-btn").forEach((btn) => {
     btn.addEventListener("click", (e) => {
-      applyTranslations(e.target.dataset.lang);
+      const selectedLang = e.target.dataset.lang || e.target.closest(".lang-btn").dataset.lang;
+      if (selectedLang) applyTranslations(selectedLang);
     });
   });
+
+  const themeBtn = document.getElementById("theme-toggle");
+  if (themeBtn) {
+    themeBtn.addEventListener("click", () => {
+      const newTheme = currentTheme === "light" ? "dark" : "light";
+      applyTheme(newTheme);
+    });
+  }
 });
 
 const form = document.getElementById("lead-form");
@@ -44,10 +72,10 @@ if (form) {
 
     const phoneInput = document.getElementById("phone").value.trim();
     const nameInput = document.getElementById("name").value.trim();
-    const t = translations[currentLang].form;
+    const t = translations[currentLang]?.form || {};
 
     if (phoneInput.length < 13) {
-      alert(t.alertPhone);
+      alert(t.alertPhone || "Telefon raqamingizni to'liq kiriting!");
       return;
     }
 
@@ -61,20 +89,23 @@ if (form) {
       });
 
       if (response.ok) {
-        alert(t.alertSuccess.replace("{name}", nameInput));
+        alert((t.alertSuccess || "Rahmat {name}!").replace("{name}", nameInput));
         form.reset();
         document.getElementById("phone").value = "+998";
       } else {
-        alert(t.alertError);
+        alert(t.alertError || "Xatolik yuz berdi.");
       }
     } catch (error) {
-      alert(t.alertNetwork);
+      alert(t.alertNetwork || "Tarmoq xatosi.");
     }
   });
 
-  document.getElementById("phone").addEventListener("input", function () {
-    if (!this.value.startsWith("+998")) {
-      this.value = "+998";
-    }
-  });
+  const phoneEl = document.getElementById("phone");
+  if (phoneEl) {
+    phoneEl.addEventListener("input", function () {
+      if (!this.value.startsWith("+998")) {
+        this.value = "+998";
+      }
+    });
+  }
 }
