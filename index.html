@@ -3,12 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>American Academy | Xonqada Sifatli Ingliz Tili Kurslari</title>
+    <title data-i18n="meta.title">American Academy | Xonqada Sifatli Ingliz Tili Kurslari</title>
 
     <link rel="icon" type="image/jpeg" href="assets/logo.jpg" />
-
     <link rel="stylesheet" href="style.css" />
-
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -22,55 +20,66 @@
         </a>
       </div>
       <nav>
-        <a href="#about">Biz haqimizda</a>
-        <a href="#courses">Kurslarimiz</a>
-        <a href="#results">Natijalar</a>
-        <a href="#contact" class="btn-nav">Hoziroq yozilish</a>
+        <a href="#about" data-i18n="nav.about">Biz haqimizda</a>
+        <a href="#courses" data-i18n="nav.courses">Kurslarimiz</a>
+        <a href="#results" data-i18n="nav.results">Natijalar</a>
+        <a href="#contact" class="btn-nav" data-i18n="nav.contact">Hoziroq yozilish</a>
       </nav>
+
+      <div class="header-controls">
+        <button id="theme-toggle" class="theme-btn" aria-label="Toggle Theme">
+          <i class="fas fa-moon"></i>
+        </button>
+        <div class="lang-switcher">
+          <button class="lang-btn active" data-lang="uz">UZ</button>
+          <button class="lang-btn" data-lang="ru">RU</button>
+          <button class="lang-btn" data-lang="en">EN</button>
+        </div>
+      </div>
     </header>
 
     <section id="hero">
       <div class="hero-content">
-        <div class="badge">Xonqa filialida qabul boshlandi!</div>
-        <h1>Ingliz Tilini Haqiqiy Mutaxassislardan O'rganing</h1>
-        <p>
+        <div class="badge" data-i18n="hero.badge">Xonqa filialida qabul boshlandi!</div>
+        <h1 data-i18n="hero.title">Ingliz Tilini Haqiqiy Mutaxassislardan O'rganing</h1>
+        <p data-i18n="hero.desc">
           American Academy bilan xalqaro maqsadlaringizga tezroq erishing.
           Zamonaviy metodika, natijaga yo'naltirilgan tizim va tajribali
           ustozlar jamoasi.
         </p>
         <div class="hero-buttons">
-          <a href="#contact" class="btn-main">Bepul darsga joy band qilish</a>
-          <a href="#courses" class="btn-secondary">Kurslar bilan tanishish</a>
+          <a href="#contact" class="btn-main" data-i18n="hero.btnMain">Bepul darsga joy band qilish</a>
+          <a href="#courses" class="btn-secondary" data-i18n="hero.btnSecondary">Kurslar bilan tanishish</a>
         </div>
       </div>
     </section>
 
     <section id="about">
       <div class="section-header">
-        <h2>Nima uchun aynan American Academy?</h2>
+        <h2 data-i18n="about.title">Nima uchun aynan American Academy?</h2>
         <div class="divider"></div>
       </div>
       <div class="about-grid">
         <div class="about-card">
           <div class="icon-wrapper"><i class="fas fa-graduation-cap"></i></div>
-          <h3>Yuqori Natijalar</h3>
-          <p>
+          <h3 data-i18n="about.feature1Title">Yuqori Natijalar</h3>
+          <p data-i18n="about.feature1Desc">
             O'quvchilarimiz qisqa muddatda IELTS 7+, 8+ darajalarini qo'lga
             kiritishmoqda va buni isbotlay olamiz.
           </p>
         </div>
         <div class="about-card">
           <div class="icon-wrapper"><i class="fas fa-user-tie"></i></div>
-          <h3>Tajribali Ustozlar</h3>
-          <p>
+          <h3 data-i18n="about.feature2Title">Tajribali Ustozlar</h3>
+          <p data-i18n="about.feature2Desc">
             Og'abek og'a va kuchli mutaxassislar jamoasidan professional,
             qiziqarli va tushunarli darslar.
           </p>
         </div>
         <div class="about-card">
           <div class="icon-wrapper"><i class="fas fa-book-open"></i></div>
-          <h3>Zamonaviy Metodika</h3>
-          <p>
+          <h3 data-i18n="about.feature3Title">Zamonaviy Metodika</h3>
+          <p data-i18n="about.feature3Desc">
             Faqat quruq grammatika emas, balki erkin gapirish (Speaking) va
             eshitish (Listening) muhiti.
           </p>
@@ -80,41 +89,41 @@
 
     <section id="courses">
       <div class="section-header">
-        <h2>Bizning O'quv Kurslarimiz</h2>
+        <h2 data-i18n="courses.title">Bizning O'quv Kurslarimiz</h2>
         <div class="divider"></div>
       </div>
       <div class="course-grid">
         <div class="course-card">
-          <div class="course-tag">Eng ommabop</div>
-          <h3>General English</h3>
-          <p>
+          <div class="course-tag" data-i18n="courses.tagPopular">Eng ommabop</div>
+          <h3 data-i18n="courses.generalTitle">General English</h3>
+          <p data-i18n="courses.generalDesc">
             Barcha yoshdagilar uchun noldan boshlab mukammal gapirish va yozish
             darajasigacha bosqichma-bosqich darslar.
           </p>
           <div class="course-footer">
-            <a href="#contact">Ro'yxatdan o'tish &rarr;</a>
+            <a href="#contact"><span data-i18n="courses.btnEnroll">Ro'yxatdan o'tish</span> &rarr;</a>
           </div>
         </div>
         <div class="course-card">
-          <div class="course-tag intensiv">Intensiv</div>
-          <h3>IELTS Preparation</h3>
-          <p>
+          <div class="course-tag intensiv" data-i18n="courses.tagIntensive">Intensiv</div>
+          <h3 data-i18n="courses.ieltsTitle">IELTS Preparation</h3>
+          <p data-i18n="courses.ieltsDesc">
             Yuqori va strategik natijalarni qisqa fursatda maqsad qilganlar
             uchun maxsus imtihon dasturlari.
           </p>
           <div class="course-footer">
-            <a href="#contact">Ro'yxatdan o'tish &rarr;</a>
+            <a href="#contact"><span data-i18n="courses.btnEnroll">Ro'yxatdan o'tish</span> &rarr;</a>
           </div>
         </div>
         <div class="course-card">
-          <div class="course-tag bolalar">Qiziqarli</div>
-          <h3>Kids English</h3>
-          <p>
+          <div class="course-tag bolalar" data-i18n="courses.tagKids">Qiziqarli</div>
+          <h3 data-i18n="courses.kidsTitle">Kids English</h3>
+          <p data-i18n="courses.kidsDesc">
             Kichik yoshdagi bolajonlar uchun maxsus o'yinlar, interaktiv
             metodlar va vizual darsliklar asosida ingliz tili.
           </p>
           <div class="course-footer">
-            <a href="#contact">Ro'yxatdan o'tish &rarr;</a>
+            <a href="#contact"><span data-i18n="courses.btnEnroll">Ro'yxatdan o'tish</span> &rarr;</a>
           </div>
         </div>
       </div>
@@ -122,57 +131,51 @@
 
     <section id="results">
       <div class="section-header">
-        <h2>O'quvchilarimiz Natijalari</h2>
-        <p class="section-subtitle">
-          Biz erishilgan yutuqlarni ijtimoiy tarmoqlarimizda jonli tarzda e'lon
-          qilib boramiz
+        <h2 data-i18n="results.title">O'quvchilarimiz Natijalari</h2>
+        <p class="section-subtitle" data-i18n="results.subtitle">
+          Biz erishilgan yutuqlarni ijtimoiy tarmoqlarimizda jonli tarzda e'lon qilib boramiz
         </p>
         <div class="divider"></div>
       </div>
 
       <div class="results-grid">
         <div class="result-box">
+          <div class="score">8.5</div>
+          <h4 data-i18n="results.scoreTopTitle">IELTS Top Score</h4>
+          <p data-i18n="results.scoreTopDesc">Xalqaro Grant Sohibi</p>
+        </div>
+        <div class="result-box">
           <div class="score">8.0</div>
-          <h4>IELTS Score</h4>
-          <p>Akademiya Faxri</p>
+          <h4 data-i18n="results.score1Title">IELTS High Score</h4>
+          <p data-i18n="results.score1Desc">Akademiya Faxri</p>
         </div>
         <div class="result-box">
           <div class="score">7.5</div>
-          <h4>IELTS Score</h4>
-          <p>Muvaffaqiyatli Bitiruvchi</p>
+          <h4 data-i18n="results.score2Title">IELTS Advanced Score</h4>
+          <p data-i18n="results.score2Desc">Muvaffaqiyatli Bitiruvchi</p>
         </div>
         <div class="result-box">
           <div class="score">7.0</div>
-          <h4>IELTS Score</h4>
-          <p>Yuqori Ko'rsatkich</p>
+          <h4 data-i18n="results.score3Title">IELTS Upper Score</h4>
+          <p data-i18n="results.score3Desc">Yuqori Ko'rsatkich</p>
         </div>
       </div>
 
       <div class="social-promo">
-        <h3>Bizni ijtimoiy tarmoqlarda kuzating</h3>
-        <p>
-          Dars jarayonlari, master-klasslar va motivatsion video darslarni
-          o'tkazib yubormang:
+        <h3 data-i18n="social.title">Bizni ijtimoiy tarmoqlarda kuzating</h3>
+        <p data-i18n="social.desc">
+          Dars jarayonlari, master-klasslar va motivatsion video darslarni o'tkazib yubormang:
         </p>
         <div class="social-links">
-          <a
-            href="https://t.me/AMERICAN_ACADEMY_UZB"
-            target="_blank"
-            class="social-btn tg"
-            ><i class="fab fa-telegram"></i> Telegram</a
-          >
-          <a
-            href="https://www.instagram.com/americanacademylc/"
-            target="_blank"
-            class="social-btn insta"
-            ><i class="fab fa-instagram"></i> Instagram</a
-          >
-          <a
-            href="https://www.youtube.com/@AmericanAcademyUzb"
-            target="_blank"
-            class="social-btn yt"
-            ><i class="fab fa-youtube"></i> YouTube</a
-          >
+          <a href="https://t.me/AMERICAN_ACADEMY_UZB" target="_blank" class="social-btn tg">
+            <i class="fab fa-telegram"></i> Telegram
+          </a>
+          <a href="https://www.instagram.com/americanacademylc/" target="_blank" class="social-btn insta">
+            <i class="fab fa-instagram"></i> Instagram
+          </a>
+          <a href="https://www.youtube.com/@AmericanAcademyUzb" target="_blank" class="social-btn yt">
+            <i class="fab fa-youtube"></i> YouTube
+          </a>
         </div>
       </div>
     </section>
@@ -180,97 +183,58 @@
     <section id="contact">
       <div class="contact-container">
         <div class="contact-info">
-          <h2>Bepul darsga joy band qiling!</h2>
-          <p>
+          <h2 data-i18n="contact.title">Bepul darsga joy band qiling!</h2>
+          <p data-i18n="contact.desc">
             O'zingizga ma'qul kursni tanlang va birinchi sinov darsimizda
             mutlaqo bepul qatnashing. Savollaringiz bo'lsa administratordan
             to'liq ma'lumot oling.
           </p>
           <div class="info-items">
-            <p>
-              <i class="fas fa-map-marker-alt"></i> Xorazm viloyati, Xonqa
-              tumani
-            </p>
-            <p>
-              <i class="fas fa-clock"></i> Ish vaqti: 08:00 - 20:00 (Dush-Shan)
-            </p>
+            <p><i class="fas fa-map-marker-alt"></i> <span data-i18n="contact.address">Xorazm viloyati, Xonqa tumani</span></p>
+            <p><i class="fas fa-clock"></i> <span data-i18n="contact.hours">Ish vaqti: 08:00 - 20:00 (Dush-Shan)</span></p>
           </div>
         </div>
 
         <div class="contact-form-wrapper">
-          <form
-            id="lead-form"
-            action="https://formspree.io/f/mlgvbwrb"
-            method="POST"
-          >
+          <form id="lead-form" action="https://formspree.io/f/mlgvbwrb" method="POST">
             <div class="form-group">
-              <label for="name"
-                >To'liq ismingiz <span class="required">*</span></label
-              >
-              <input
-                type="text"
-                id="name"
-                name="Ismi"
-                placeholder="Masalan: Azizbek"
-                required
-              />
+              <label for="name">
+                <span data-i18n="form.nameLabel">To'liq ismingiz</span> <span class="required">*</span>
+              </label>
+              <input type="text" id="name" name="Ismi" data-i18n="form.namePlaceholder" placeholder="Masalan: Azizbek" required />
             </div>
 
             <div class="form-group">
-              <label for="phone"
-                >Telefon raqamingiz <span class="required">*</span></label
-              >
-              <input
-                type="tel"
-                id="phone"
-                name="Telefon_Raqami"
-                value="+998"
-                placeholder="+998 (XX) XXX-XX-XX"
-                required
-              />
+              <label for="phone">
+                <span data-i18n="form.phoneLabel">Telefon raqamingiz</span> <span class="required">*</span>
+              </label>
+              <input type="tel" id="phone" name="Telefon_Raqami" value="+998" placeholder="+998 (XX) XXX-XX-XX" required />
             </div>
 
             <div class="form-group">
-              <label for="course-select"
-                >Sizni qaysi kurs qiziqtirmoqda?
-                <span class="required">*</span></label
-              >
+              <label for="course-select">
+                <span data-i18n="form.courseLabel">Sizni qaysi kurs qiziqtirmoqda?</span> <span class="required">*</span>
+              </label>
               <select id="course-select" name="Tanlagan_Kursi" required>
-                <option value="" disabled selected>Kursni tanlang...</option>
-                <option value="General English">
-                  General English (Umumiy ingliz tili)
-                </option>
-                <option value="IELTS Preparation">
-                  IELTS Preparation (Intensiv guruh)
-                </option>
-                <option value="Kids English">
-                  Kids English (Bolalar uchun)
-                </option>
+                <option value="" disabled selected data-i18n="form.courseDefault">Kursni tanlang...</option>
+                <option value="General English" data-i18n="form.courseOpt1">General English (Umumiy ingliz tili)</option>
+                <option value="IELTS Preparation" data-i18n="form.courseOpt2">IELTS Preparation (Intensiv guruh)</option>
+                <option value="Kids English" data-i18n="form.courseOpt3">Kids English (Bolalar uchun)</option>
               </select>
             </div>
 
             <div class="form-group">
-              <label for="time-select"
-                >O'qish uchun qaysi vaqt sizga qulay?</label
-              >
+              <label for="time-select" data-i18n="form.timeLabel">O'qish uchun qaysi vaqt sizga qulay?</label>
               <select id="time-select" name="Qulay_Vaqti">
-                <option value="Farqi yo'q" selected>
-                  Vaqtni tanlang (Ixtiyoriy)
-                </option>
-                <option value="Ertalabki smena (08:00 - 12:00)">
-                  Ertalabki smena (08:00 - 12:00)
-                </option>
-                <option value="Abaddan keyingi smena (13:00 - 17:00)">
-                  Abeddan keyingi smena (13:00 - 17:00)
-                </option>
-                <option value="Kechki smena (17:00 - 20:00)">
-                  Kechki smena (17:00 - 20:00)
-                </option>
+                <option value="Farqi yo'q" selected data-i18n="form.timeOptDefault">Vaqtni tanlang (Ixtiyoriy)</option>
+                <option value="Ertalabki smena (08:00 - 12:00)" data-i18n="form.timeOpt1">Ertalabki smena (08:00 - 12:00)</option>
+                <option value="Abaddan keyingi smena (13:00 - 17:00)" data-i18n="form.timeOpt2">Abeddan keyingi smena (13:00 - 17:00)</option>
+                <option value="Kechki smena (17:00 - 20:00)" data-i18n="form.timeOpt3">Kechki smena (17:00 - 20:00)</option>
               </select>
             </div>
 
             <button type="submit" class="btn-submit">
-              Arizani tasdiqlash <i class="fas fa-paper-plane"></i>
+              <span data-i18n="form.btnSubmit">Arizani tasdiqlash</span> <i class="fas fa-paper-plane"></i>
             </button>
           </form>
         </div>
@@ -279,11 +243,12 @@
 
     <footer>
       <div class="footer-content">
-        <p>&copy; 2026 American Academy Xonqa. Barcha huquqlar himoyalangan.</p>
+        <p data-i18n="footer.rights">&copy; 2026 American Academy Xonqa. Barcha huquqlar himoyalangan.</p>
         <p class="dev-credit">Designed & Developed by Azizbek</p>
       </div>
     </footer>
 
+    <script src="js/translations.js"></script>
     <script src="script.js"></script>
   </body>
 </html>

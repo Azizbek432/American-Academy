@@ -1,0 +1,80 @@
+let currentLang = localStorage.getItem("app_lang") || "uz";
+
+function getNestedTranslation(obj, path) {
+  return path.split('.').reduce((prev, curr) => prev ? prev[curr] : null, obj);
+}
+
+function applyTranslations(lang) {
+  currentLang = lang;
+  localStorage.setItem("app_lang", lang);
+  document.documentElement.lang = lang;
+
+  document.querySelectorAll("[data-i18n]").forEach((el) => {
+    const key = el.getAttribute("data-i18n");
+    const translation = getNestedTranslation(translations[lang], key);
+    if (translation) {
+      if (el.tagName === "INPUT" || el.tagName === "TEXTAREA") {
+        el.placeholder = translation;
+      } else {
+        el.textContent = translation;
+      }
+    }
+  });
+
+  document.querySelectorAll(".lang-btn").forEach((btn) => {
+    btn.classList.toggle("active", btn.dataset.lang === lang);
+  });
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  applyTranslations(currentLang);
+
+  document.querySelectorAll(".lang-btn").forEach((btn) => {
+    btn.addEventListener("click", (e) => {
+      applyTranslations(e.target.dataset.lang);
+    });
+  });
+});
+
+const form = document.getElementById("lead-form");
+
+if (form) {
+  form.addEventListener("submit", async function (e) {
+    e.preventDefault();
+
+    const phoneInput = document.getElementById("phone").value.trim();
+    const nameInput = document.getElementById("name").value.trim();
+    const t = translations[currentLang].form;
+
+    if (phoneInput.length < 13) {
+      alert(t.alertPhone);
+      return;
+    }
+
+    const formData = new FormData(form);
+
+    try {
+      const response = await fetch(form.action, {
+        method: form.method,
+        body: formData,
+        headers: { Accept: "application/json" },
+      });
+
+      if (response.ok) {
+        alert(t.alertSuccess.replace("{name}", nameInput));
+        form.reset();
+        document.getElementById("phone").value = "+998";
+      } else {
+        alert(t.alertError);
+      }
+    } catch (error) {
+      alert(t.alertNetwork);
+    }
+  });
+
+  document.getElementById("phone").addEventListener("input", function () {
+    if (!this.value.startsWith("+998")) {
+      this.value = "+998";
+    }
+  });
+}
