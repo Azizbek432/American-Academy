@@ -4,13 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title data-i18n="meta.title">American Academy | Xonqada Sifatli Ingliz Tili Kurslari</title>
-
     <link rel="icon" type="image/jpeg" href="assets/logo.jpg" />
     <link rel="stylesheet" href="css/style.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   </head>
   <body>
     <header>
@@ -19,7 +15,8 @@
           <img src="assets/logo.jpg" alt="American Academy Logo" />
         </a>
       </div>
-      <nav>
+
+      <nav id="nav-menu">
         <a href="#about" data-i18n="nav.about">Biz haqimizda</a>
         <a href="#courses" data-i18n="nav.courses">Kurslarimiz</a>
         <a href="#results" data-i18n="nav.results">Natijalar</a>
@@ -35,6 +32,9 @@
           <button class="lang-btn" data-lang="ru">RU</button>
           <button class="lang-btn" data-lang="en">EN</button>
         </div>
+        <button id="hamburger" class="hamburger-btn" aria-label="Toggle Navigation">
+          <i class="fas fa-bars"></i>
+        </button>
       </div>
     </header>
 
@@ -43,9 +43,7 @@
         <div class="badge" data-i18n="hero.badge">Xonqa filialida qabul boshlandi!</div>
         <h1 data-i18n="hero.title">Ingliz Tilini Haqiqiy Mutaxassislardan O'rganing</h1>
         <p data-i18n="hero.desc">
-          American Academy bilan xalqaro maqsadlaringizga tezroq erishing.
-          Zamonaviy metodika, natijaga yo'naltirilgan tizim va tajribali
-          ustozlar jamoasi.
+          American Academy bilan xalqaro maqsadlaringizga tezroq erishing. Zamonaviy metodika, natijaga yo'naltirilgan tizim va tajribali ustozlar jamoasi.
         </p>
         <div class="hero-buttons">
           <a href="#contact" class="btn-main" data-i18n="hero.btnMain">Bepul darsga joy band qilish</a>
@@ -63,26 +61,17 @@
         <div class="about-card">
           <div class="icon-wrapper"><i class="fas fa-graduation-cap"></i></div>
           <h3 data-i18n="about.feature1Title">Yuqori Natijalar</h3>
-          <p data-i18n="about.feature1Desc">
-            O'quvchilarimiz qisqa muddatda IELTS 7+, 8+ darajalarini qo'lga
-            kiritishmoqda va buni isbotlay olamiz.
-          </p>
+          <p data-i18n="about.feature1Desc">O'quvchilarimiz qisqa muddatda IELTS 7+, 8+ darajalarini qo'lga kiritishmoqda va buni isbotlay olamiz.</p>
         </div>
         <div class="about-card">
           <div class="icon-wrapper"><i class="fas fa-user-tie"></i></div>
           <h3 data-i18n="about.feature2Title">Tajribali Ustozlar</h3>
-          <p data-i18n="about.feature2Desc">
-            Og'abek og'a va kuchli mutaxassislar jamoasidan professional,
-            qiziqarli va tushunarli darslar.
-          </p>
+          <p data-i18n="about.feature2Desc">Og'abek og'a va kuchli mutaxassislar jamoasidan professional, qiziqarli va tushunarli darslar.</p>
         </div>
         <div class="about-card">
           <div class="icon-wrapper"><i class="fas fa-book-open"></i></div>
           <h3 data-i18n="about.feature3Title">Zamonaviy Metodika</h3>
-          <p data-i18n="about.feature3Desc">
-            Faqat quruq grammatika emas, balki erkin gapirish (Speaking) va
-            eshitish (Listening) muhiti.
-          </p>
+          <p data-i18n="about.feature3Desc">Faqat quruq grammatika emas, balki erkin gapirish (Speaking) va eshitish (Listening) muhiti.</p>
         </div>
       </div>
     </section>
@@ -96,10 +85,7 @@
         <div class="course-card">
           <div class="course-tag" data-i18n="courses.tagPopular">Eng ommabop</div>
           <h3 data-i18n="courses.generalTitle">General English</h3>
-          <p data-i18n="courses.generalDesc">
-            Barcha yoshdagilar uchun noldan boshlab mukammal gapirish va yozish
-            darajasigacha bosqichma-bosqich darslar.
-          </p>
+          <p data-i18n="courses.generalDesc">Barcha yoshdagilar uchun noldan boshlab mukammal gapirish va yozish darajasigacha bosqichma-bosqich darslar.</p>
           <div class="course-footer">
             <a href="#contact"><span data-i18n="courses.btnEnroll">Ro'yxatdan o'tish</span> &rarr;</a>
           </div>
@@ -107,10 +93,7 @@
         <div class="course-card">
           <div class="course-tag intensiv" data-i18n="courses.tagIntensive">Intensiv</div>
           <h3 data-i18n="courses.ieltsTitle">IELTS Preparation</h3>
-          <p data-i18n="courses.ieltsDesc">
-            Yuqori va strategik natijalarni qisqa fursatda maqsad qilganlar
-            uchun maxsus imtihon dasturlari.
-          </p>
+          <p data-i18n="courses.ieltsDesc">Yuqori va strategik natijalarni qisqa fursatda maqsad qilganlar uchun maxsus imtihon dasturlari.</p>
           <div class="course-footer">
             <a href="#contact"><span data-i18n="courses.btnEnroll">Ro'yxatdan o'tish</span> &rarr;</a>
           </div>
@@ -118,10 +101,7 @@
         <div class="course-card">
           <div class="course-tag bolalar" data-i18n="courses.tagKids">Qiziqarli</div>
           <h3 data-i18n="courses.kidsTitle">Kids English</h3>
-          <p data-i18n="courses.kidsDesc">
-            Kichik yoshdagi bolajonlar uchun maxsus o'yinlar, interaktiv
-            metodlar va vizual darsliklar asosida ingliz tili.
-          </p>
+          <p data-i18n="courses.kidsDesc">Kichik yoshdagi bolajonlar uchun maxsus o'yinlar, interaktiv metodlar va vizual darsliklar asosida ingliz tili.</p>
           <div class="course-footer">
             <a href="#contact"><span data-i18n="courses.btnEnroll">Ro'yxatdan o'tish</span> &rarr;</a>
           </div>
@@ -132,9 +112,7 @@
     <section id="results">
       <div class="section-header">
         <h2 data-i18n="results.title">O'quvchilarimiz Natijalari</h2>
-        <p class="section-subtitle" data-i18n="results.subtitle">
-          Biz erishilgan yutuqlarni ijtimoiy tarmoqlarimizda jonli tarzda e'lon qilib boramiz
-        </p>
+        <p class="section-subtitle" data-i18n="results.subtitle">Biz erishilgan yutuqlarni ijtimoiy tarmoqlarimizda jonli tarzda e'lon qilib boramiz</p>
         <div class="divider"></div>
       </div>
 
@@ -163,9 +141,7 @@
 
       <div class="social-promo">
         <h3 data-i18n="social.title">Bizni ijtimoiy tarmoqlarda kuzating</h3>
-        <p data-i18n="social.desc">
-          Dars jarayonlari, master-klasslar va motivatsion video darslarni o'tkazib yubormang:
-        </p>
+        <p data-i18n="social.desc">Dars jarayonlari, master-klasslar va motivatsion video darslarni o'tkazib yubormang:</p>
         <div class="social-links">
           <a href="https://t.me/AMERICAN_ACADEMY_UZB" target="_blank" class="social-btn tg">
             <i class="fab fa-telegram"></i> Telegram
@@ -184,11 +160,7 @@
       <div class="contact-container">
         <div class="contact-info">
           <h2 data-i18n="contact.title">Bepul darsga joy band qiling!</h2>
-          <p data-i18n="contact.desc">
-            O'zingizga ma'qul kursni tanlang va birinchi sinov darsimizda
-            mutlaqo bepul qatnashing. Savollaringiz bo'lsa administratordan
-            to'liq ma'lumot oling.
-          </p>
+          <p data-i18n="contact.desc">O'zingizga ma'qul kursni tanlang va birinchi sinov darsimizda mutlaqo bepul qatnashing. Savollaringiz bo'lsa administratordan to'liq ma'lumot oling.</p>
           <div class="info-items">
             <p><i class="fas fa-map-marker-alt"></i> <span data-i18n="contact.address">Xorazm viloyati, Xonqa tumani</span></p>
             <p><i class="fas fa-clock"></i> <span data-i18n="contact.hours">Ish vaqti: 08:00 - 20:00 (Dush-Shan)</span></p>
@@ -224,11 +196,13 @@
             </div>
 
             <div class="form-group">
-              <label for="time-select" data-i18n="form.timeLabel">O'qish uchun qaysi vaqt sizga qulay?</label>
+              <label for="time-select">
+                <span data-i18n="form.timeLabel">O'qish uchun qaysi vaqt sizga qulay?</span>
+              </label>
               <select id="time-select" name="Qulay_Vaqti">
                 <option value="Farqi yo'q" selected data-i18n="form.timeOptDefault">Vaqtni tanlang (Ixtiyoriy)</option>
                 <option value="Ertalabki smena (08:00 - 12:00)" data-i18n="form.timeOpt1">Ertalabki smena (08:00 - 12:00)</option>
-                <option value="Abaddan keyingi smena (13:00 - 17:00)" data-i18n="form.timeOpt2">Abeddan keyingi smena (13:00 - 17:00)</option>
+                <option value="Abeddan keyingi smena (13:00 - 17:00)" data-i18n="form.timeOpt2">Abeddan keyingi smena (13:00 - 17:00)</option>
                 <option value="Kechki smena (17:00 - 20:00)" data-i18n="form.timeOpt3">Kechki smena (17:00 - 20:00)</option>
               </select>
             </div>
@@ -244,7 +218,7 @@
     <footer>
       <div class="footer-content">
         <p data-i18n="footer.rights">&copy; 2026 American Academy Xonqa. Barcha huquqlar himoyalangan.</p>
-        <p class="dev-credit">Designed & Developed by Azizbek</p>
+        <p class="dev-credit" data-i18n="footer.dev">Designed & Developed by Azizbek</p>
       </div>
     </footer>
 

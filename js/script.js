@@ -16,8 +16,6 @@ function applyTranslations(lang) {
     if (translation) {
       if (el.tagName === "INPUT" || el.tagName === "TEXTAREA") {
         el.placeholder = translation;
-      } else if (el.tagName === "OPTION") {
-        el.textContent = translation;
       } else {
         el.textContent = translation;
       }
@@ -34,7 +32,6 @@ function applyTheme(theme) {
   localStorage.setItem("app_theme", theme);
 
   const themeBtn = document.getElementById("theme-toggle");
-  
   if (theme === "dark") {
     document.body.classList.add("dark-theme");
     if (themeBtn) themeBtn.innerHTML = '<i class="fas fa-sun"></i>';
@@ -47,6 +44,25 @@ function applyTheme(theme) {
 document.addEventListener("DOMContentLoaded", () => {
   applyTranslations(currentLang);
   applyTheme(currentTheme);
+
+  const hamburgerBtn = document.getElementById("hamburger");
+  const navMenu = document.getElementById("nav-menu");
+
+  if (hamburgerBtn && navMenu) {
+    hamburgerBtn.addEventListener("click", () => {
+      navMenu.classList.toggle("open");
+      hamburgerBtn.innerHTML = navMenu.classList.contains("open") 
+        ? '<i class="fas fa-times"></i>' 
+        : '<i class="fas fa-bars"></i>';
+    });
+
+    document.querySelectorAll("#nav-menu a").forEach((link) => {
+      link.addEventListener("click", () => {
+        navMenu.classList.remove("open");
+        hamburgerBtn.innerHTML = '<i class="fas fa-bars"></i>';
+      });
+    });
+  }
 
   document.querySelectorAll(".lang-btn").forEach((btn) => {
     btn.addEventListener("click", (e) => {
@@ -65,7 +81,6 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 const form = document.getElementById("lead-form");
-
 if (form) {
   form.addEventListener("submit", async function (e) {
     e.preventDefault();
